@@ -1,0 +1,6 @@
+Parameterised n-Bit Adder
+
+genvar to generate/replicate codes
+
+parameter overriding from testbench
+Also possible to override parameters at module level (different modules)

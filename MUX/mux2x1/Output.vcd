@@ -1,0 +1,75 @@
+$date
+	Tue Nov 26 16:46:48 2024
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tb $end
+$var wire 1 ! y $end
+$var reg 1 " i0 $end
+$var reg 1 # i1 $end
+$var reg 1 $ s $end
+$var integer 32 % seed [31:0] $end
+$scope module dut $end
+$var wire 1 " i0 $end
+$var wire 1 # i1 $end
+$var wire 1 $ s $end
+$var wire 1 ! y $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b11101101110101000011011101001000 %
+1$
+1#
+0"
+1!
+$end
+#1
+0!
+0$
+0#
+b100001010010101101101011011111 %
+#2
+1!
+1$
+1#
+1"
+b11000100110011001000110010000010 %
+#3
+0!
+0$
+0#
+0"
+b100010010001110101001000100001 %
+#4
+1!
+1$
+1#
+b10110100111111001110110001101100 %
+#5
+1"
+b10011101011011011110111010011 %
+#6
+b11011110110011111111110110000110 %
+#7
+0$
+0#
+b1011010001001100010011001110101 %
+#8
+0!
+1$
+b11110111100001100101001001010000 %
+#9
+0$
+1#
+0"
+b11011000010110011111000010000111 %
+#10

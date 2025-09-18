@@ -1,0 +1,321 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\PROGRA~1\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\PROGRA~1\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\PROGRA~1\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\PROGRA~1\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\PROGRA~1\iverilog\lib\ivl\va_math.vpi";
+S_0000024c43b76ef0 .scope module, "tb" "tb" 2 1;
+ .timescale 0 0;
+P_0000024c43b524d0 .param/l "ADD" 0 2 10, C4<0001>;
+P_0000024c43b52508 .param/l "DIV" 0 2 13, C4<0100>;
+P_0000024c43b52540 .param/l "LSH" 0 2 16, C4<0111>;
+P_0000024c43b52578 .param/l "MOD" 0 2 14, C4<0101>;
+P_0000024c43b525b0 .param/l "MUL" 0 2 12, C4<0011>;
+P_0000024c43b525e8 .param/l "NO_OPERATION" 0 2 9, C4<0000>;
+P_0000024c43b52620 .param/l "POW" 0 2 15, C4<0110>;
+P_0000024c43b52658 .param/l "RSH" 0 2 17, C4<1000>;
+P_0000024c43b52690 .param/l "SUB" 0 2 11, C4<0010>;
+v0000024c43b81c90_0 .var "operation", 4 0;
+v0000024c43b81d30_0 .var "p", 7 0;
+v0000024c43b81dd0_0 .var "q", 7 0;
+v0000024c43b81e70_0 .var "result", 31 0;
+v0000024c43b81f10_0 .var/i "seed", 31 0;
+S_0000024c43b526d0 .scope function.vec4.s32, "alu" "alu" 2 46, 2 46 0, S_0000024c43b76ef0;
+ .timescale 0 0;
+; Variable alu is vec4 return value of scope S_0000024c43b526d0
+v0000024c43b52860_0 .var "op1", 7 0;
+v0000024c43b81b50_0 .var "op2", 7 0;
+v0000024c43b81bf0_0 .var "oper", 3 0;
+TD_tb.alu ;
+    %load/vec4 v0000024c43b81bf0_0;
+    %dup/vec4;
+    %pushi/vec4 0, 0, 4;
+    %cmp/u;
+    %jmp/1 T_0.0, 6;
+    %dup/vec4;
+    %pushi/vec4 1, 0, 4;
+    %cmp/u;
+    %jmp/1 T_0.1, 6;
+    %dup/vec4;
+    %pushi/vec4 2, 0, 4;
+    %cmp/u;
+    %jmp/1 T_0.2, 6;
+    %dup/vec4;
+    %pushi/vec4 3, 0, 4;
+    %cmp/u;
+    %jmp/1 T_0.3, 6;
+    %dup/vec4;
+    %pushi/vec4 4, 0, 4;
+    %cmp/u;
+    %jmp/1 T_0.4, 6;
+    %dup/vec4;
+    %pushi/vec4 5, 0, 4;
+    %cmp/u;
+    %jmp/1 T_0.5, 6;
+    %dup/vec4;
+    %pushi/vec4 6, 0, 4;
+    %cmp/u;
+    %jmp/1 T_0.6, 6;
+    %dup/vec4;
+    %pushi/vec4 7, 0, 4;
+    %cmp/u;
+    %jmp/1 T_0.7, 6;
+    %dup/vec4;
+    %pushi/vec4 8, 0, 4;
+    %cmp/u;
+    %jmp/1 T_0.8, 6;
+    %vpi_call 2 58 "$display", "\011 Please provide correct operation" {0 0 0};
+    %jmp T_0.10;
+T_0.0 ;
+    %pushi/vec4 4294967295, 4294967295, 32;
+    %ret/vec4 0, 0, 32;  Assign to alu (store_vec4_to_lval)
+    %jmp T_0.10;
+T_0.1 ;
+    %load/vec4 v0000024c43b52860_0;
+    %pad/u 32;
+    %load/vec4 v0000024c43b81b50_0;
+    %pad/u 32;
+    %add;
+    %ret/vec4 0, 0, 32;  Assign to alu (store_vec4_to_lval)
+    %jmp T_0.10;
+T_0.2 ;
+    %load/vec4 v0000024c43b52860_0;
+    %pad/u 32;
+    %load/vec4 v0000024c43b81b50_0;
+    %pad/u 32;
+    %sub;
+    %ret/vec4 0, 0, 32;  Assign to alu (store_vec4_to_lval)
+    %jmp T_0.10;
+T_0.3 ;
+    %load/vec4 v0000024c43b52860_0;
+    %pad/u 32;
+    %load/vec4 v0000024c43b81b50_0;
+    %pad/u 32;
+    %mul;
+    %ret/vec4 0, 0, 32;  Assign to alu (store_vec4_to_lval)
+    %jmp T_0.10;
+T_0.4 ;
+    %load/vec4 v0000024c43b52860_0;
+    %pad/u 32;
+    %load/vec4 v0000024c43b81b50_0;
+    %pad/u 32;
+    %div;
+    %ret/vec4 0, 0, 32;  Assign to alu (store_vec4_to_lval)
+    %jmp T_0.10;
+T_0.5 ;
+    %load/vec4 v0000024c43b52860_0;
+    %pad/u 32;
+    %load/vec4 v0000024c43b81b50_0;
+    %pad/u 32;
+    %mod;
+    %ret/vec4 0, 0, 32;  Assign to alu (store_vec4_to_lval)
+    %jmp T_0.10;
+T_0.6 ;
+    %load/vec4 v0000024c43b52860_0;
+    %pad/u 32;
+    %load/vec4 v0000024c43b81b50_0;
+    %pow;
+    %ret/vec4 0, 0, 32;  Assign to alu (store_vec4_to_lval)
+    %jmp T_0.10;
+T_0.7 ;
+    %load/vec4 v0000024c43b52860_0;
+    %pad/u 32;
+    %ix/getv 4, v0000024c43b81b50_0;
+    %shiftl 4;
+    %ret/vec4 0, 0, 32;  Assign to alu (store_vec4_to_lval)
+    %jmp T_0.10;
+T_0.8 ;
+    %load/vec4 v0000024c43b52860_0;
+    %pad/u 32;
+    %ix/getv 4, v0000024c43b81b50_0;
+    %shiftr 4;
+    %ret/vec4 0, 0, 32;  Assign to alu (store_vec4_to_lval)
+    %jmp T_0.10;
+T_0.10 ;
+    %pop/vec4 1;
+    %end;
+    .scope S_0000024c43b76ef0;
+T_1 ;
+    %pushi/vec4 20, 0, 32;
+T_1.0 %dup/vec4;
+    %pushi/vec4 0, 0, 32;
+    %cmp/s;
+    %jmp/1xz T_1.1, 5;
+    %jmp/1 T_1.1, 4;
+    %pushi/vec4 1, 0, 32;
+    %sub;
+    %pushi/vec4 23444, 0, 32;
+    %store/vec4 v0000024c43b81f10_0, 0, 32;
+    %vpi_func 2 24 "$random" 32, v0000024c43b81f10_0 {0 0 0};
+    %pad/s 16;
+    %split/vec4 8;
+    %store/vec4 v0000024c43b81dd0_0, 0, 8;
+    %store/vec4 v0000024c43b81d30_0, 0, 8;
+    %vpi_func 2 25 "$urandom" 32 {0 0 0};
+    %pushi/vec4 9, 0, 32;
+    %mod;
+    %pad/u 5;
+    %store/vec4 v0000024c43b81c90_0, 0, 5;
+    %load/vec4 v0000024c43b81d30_0;
+    %load/vec4 v0000024c43b81dd0_0;
+    %load/vec4 v0000024c43b81c90_0;
+    %store/vec4 v0000024c43b81bf0_0, 0, 4;
+    %store/vec4 v0000024c43b81b50_0, 0, 8;
+    %store/vec4 v0000024c43b52860_0, 0, 8;
+    %callf/vec4 TD_tb.alu, S_0000024c43b526d0;
+    %store/vec4 v0000024c43b81e70_0, 0, 32;
+    %delay 2, 0;
+    %load/vec4 v0000024c43b81c90_0;
+    %cmpi/e 0, 0, 5;
+    %flag_mov 8, 4;
+    %jmp/0 T_1.2, 8;
+    %pushi/vec4 1313824591, 0, 32; draw_string_vec4
+    %pushi/vec4 1346720321, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1414090574, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %jmp/1 T_1.3, 8;
+T_1.2 ; End of true expr.
+    %load/vec4 v0000024c43b81c90_0;
+    %cmpi/e 1, 0, 5;
+    %flag_mov 9, 4;
+    %jmp/0 T_1.4, 9;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 4277316, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %jmp/1 T_1.5, 9;
+T_1.4 ; End of true expr.
+    %load/vec4 v0000024c43b81c90_0;
+    %cmpi/e 2, 0, 5;
+    %flag_mov 10, 4;
+    %jmp/0 T_1.6, 10;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 5461314, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %jmp/1 T_1.7, 10;
+T_1.6 ; End of true expr.
+    %load/vec4 v0000024c43b81c90_0;
+    %cmpi/e 3, 0, 5;
+    %flag_mov 11, 4;
+    %jmp/0 T_1.8, 11;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 5068108, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %jmp/1 T_1.9, 11;
+T_1.8 ; End of true expr.
+    %load/vec4 v0000024c43b81c90_0;
+    %cmpi/e 4, 0, 5;
+    %flag_mov 12, 4;
+    %jmp/0 T_1.10, 12;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 4475222, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %jmp/1 T_1.11, 12;
+T_1.10 ; End of true expr.
+    %load/vec4 v0000024c43b81c90_0;
+    %cmpi/e 5, 0, 5;
+    %flag_mov 13, 4;
+    %jmp/0 T_1.12, 13;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 5066564, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %jmp/1 T_1.13, 13;
+T_1.12 ; End of true expr.
+    %load/vec4 v0000024c43b81c90_0;
+    %cmpi/e 6, 0, 5;
+    %flag_mov 14, 4;
+    %jmp/0 T_1.14, 14;
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 80, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1331119442, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %jmp/1 T_1.15, 14;
+T_1.14 ; End of true expr.
+    %load/vec4 v0000024c43b81c90_0;
+    %cmpi/e 7, 0, 5;
+    %flag_mov 15, 4;
+    %jmp/0 T_1.16, 15;
+    %pushi/vec4 19525, 0, 32; draw_string_vec4
+    %pushi/vec4 1179934547, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1212761684, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %jmp/1 T_1.17, 15;
+T_1.16 ; End of true expr.
+    %load/vec4 v0000024c43b81c90_0;
+    %cmpi/e 8, 0, 5;
+    %flag_mov 16, 4;
+    %jmp/0 T_1.18, 16;
+    %pushi/vec4 5392711, 0, 32; draw_string_vec4
+    %pushi/vec4 1213488979, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1212761684, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %jmp/1 T_1.19, 16;
+T_1.18 ; End of true expr.
+    %pushi/vec4 0, 0, 32; draw_string_vec4
+    %pushi/vec4 69, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %pushi/vec4 1381125970, 0, 32; draw_string_vec4
+    %concat/vec4; draw_string_vec4
+    %jmp/0 T_1.19, 16;
+ ; End of false expr.
+    %blend;
+T_1.19;
+    %jmp/0 T_1.17, 15;
+ ; End of false expr.
+    %blend;
+T_1.17;
+    %jmp/0 T_1.15, 14;
+ ; End of false expr.
+    %blend;
+T_1.15;
+    %jmp/0 T_1.13, 13;
+ ; End of false expr.
+    %blend;
+T_1.13;
+    %jmp/0 T_1.11, 12;
+ ; End of false expr.
+    %blend;
+T_1.11;
+    %jmp/0 T_1.9, 11;
+ ; End of false expr.
+    %blend;
+T_1.9;
+    %jmp/0 T_1.7, 10;
+ ; End of false expr.
+    %blend;
+T_1.7;
+    %jmp/0 T_1.5, 9;
+ ; End of false expr.
+    %blend;
+T_1.5;
+    %jmp/0 T_1.3, 8;
+ ; End of false expr.
+    %blend;
+T_1.3;
+    %vpi_call 2 28 "$display", "%t : Operand_1 = %0d : Operand_2 = %0d : Operation=%0s : result=%0d", $time, v0000024c43b81d30_0, v0000024c43b81dd0_0, S<0,vec4,u96>, v0000024c43b81e70_0 {1 0 0};
+    %jmp T_1.0;
+T_1.1 ;
+    %pop/vec4 1;
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "alu.v";

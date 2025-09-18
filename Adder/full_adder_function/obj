@@ -1,0 +1,65 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1539-g2693dd32b)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "C:\PROGRA~1\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\PROGRA~1\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\PROGRA~1\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\PROGRA~1\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\PROGRA~1\iverilog\lib\ivl\va_math.vpi";
+S_0000021c6b932b50 .scope module, "tb" "tb" 2 1;
+ .timescale 0 0;
+v0000021c6b91aa10_0 .var "cout", 0 0;
+v0000021c6b91aab0_0 .var "p", 3 0;
+v0000021c6b91ab50_0 .var "q", 3 0;
+v0000021c6b91abf0_0 .var "r", 0 0;
+v0000021c6b91ac90_0 .var "s", 3 0;
+S_0000021c6b932ce0 .scope function.vec4.s5, "fa" "fa" 2 7, 2 7 0, S_0000021c6b932b50;
+ .timescale 0 0;
+v0000021c6b9195e0_0 .var "a", 3 0;
+v0000021c6b919a80_0 .var "b", 3 0;
+v0000021c6b91a8d0_0 .var "cin", 0 0;
+; Variable fa is vec4 return value of scope S_0000021c6b932ce0
+TD_tb.fa ;
+    %load/vec4 v0000021c6b91aab0_0;
+    %pad/u 5;
+    %load/vec4 v0000021c6b91ab50_0;
+    %pad/u 5;
+    %add;
+    %load/vec4 v0000021c6b91abf0_0;
+    %pad/u 5;
+    %add;
+    %ret/vec4 0, 0, 5;  Assign to fa (store_vec4_to_lval)
+    %end;
+    .scope S_0000021c6b932b50;
+T_1 ;
+    %vpi_func 2 14 "$urandom_range" 32, 32'sb00000000000000000000000000000101, 32'sb00000000000000000000000000001010 {0 0 0};
+    %pad/u 4;
+    %store/vec4 v0000021c6b91aab0_0, 0, 4;
+    %vpi_func 2 15 "$urandom_range" 32, 32'sb00000000000000000000000000000010, 32'sb00000000000000000000000000001111 {0 0 0};
+    %pad/u 4;
+    %store/vec4 v0000021c6b91ab50_0, 0, 4;
+    %vpi_func 2 16 "$random" 32 {0 0 0};
+    %pad/s 1;
+    %store/vec4 v0000021c6b91abf0_0, 0, 1;
+    %load/vec4 v0000021c6b91aab0_0;
+    %load/vec4 v0000021c6b91ab50_0;
+    %load/vec4 v0000021c6b91abf0_0;
+    %store/vec4 v0000021c6b91a8d0_0, 0, 1;
+    %store/vec4 v0000021c6b919a80_0, 0, 4;
+    %store/vec4 v0000021c6b9195e0_0, 0, 4;
+    %callf/vec4 TD_tb.fa, S_0000021c6b932ce0;
+    %split/vec4 4;
+    %store/vec4 v0000021c6b91ac90_0, 0, 4;
+    %store/vec4 v0000021c6b91aa10_0, 0, 1;
+    %load/vec4 v0000021c6b91aa10_0;
+    %load/vec4 v0000021c6b91ac90_0;
+    %concat/vec4; draw_concat_vec4
+    %vpi_call 2 20 "$display", "%0t : a = %b : b = %b : cin = %b : sum = %b", $time, v0000021c6b91aab0_0, v0000021c6b91ab50_0, v0000021c6b91abf0_0, S<0,vec4,u5> {1 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 3;
+    "N/A";
+    "<interactive>";
+    "fa_func.v";
